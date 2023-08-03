@@ -1,5 +1,5 @@
 # Solutions
-
+from typing import List
 # Question 1342
 class Solution1342:
     def numberOfSteps(self, num: int) -> int:
@@ -15,8 +15,18 @@ class Solution1342:
                     count = count + 1
         return count
 
+# Question 1
+class Solution1:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        for i in range(len(nums)):
+           for k in range(len(nums)):
+               sum = nums[i] + nums[k]
+               if sum == target:
+                   print(i, k)
+                   return [i, k]
+
 
 if __name__ == "__main__":
-    solution = Solution1342()
-    steps = solution.numberOfSteps(128)
+    solution = Solution1()
+    steps = solution.twoSum([2, 7, 11,1, 5], 9)
     print(steps)
